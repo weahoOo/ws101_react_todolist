@@ -1,0 +1,228 @@
+/* Base styles */
+body {
+  background-color: #f8e5d0; /* Soft beige background */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, lighthearted font */
+  color: #2d2d2d; /* Dark text for contrast */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Column-based layout for better responsiveness */
+}
+
+/* Neon Title with Cat-Themed Details */
+h1 {
+  font-size: 2.5rem;
+  color: #ff6f61; /* Soft pastel pink */
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+  padding: 0 10px;
+}
+
+/* Neon Glow for Heading */
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 10px #ff8a65, 0 0 20px #ff8a65, 0 0 30px #ff8a65;
+  }
+  to {
+    text-shadow: 0 0 20px #ff6f61, 0 0 40px #ff6f61, 0 0 60px #ff6f61;
+  }
+}
+
+/* Container */
+.app-container {
+  width: 100%;
+  max-width: 1200px; /* Max width for large screens */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Task Form Styling */
+.add-todo-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Wraps on smaller screens */
+}
+
+.add-todo-form input,
+.add-todo-form select {
+  flex: 1;
+  margin-right: 10px;
+  margin-bottom: 10px; /* For better spacing on smaller screens */
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #eaeaea;
+  color: #2d2d2d;
+  font-size: 1rem;
+}
+
+.add-todo-form button {
+  background-color: #ff8a65;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.add-todo-form button:hover {
+  background-color: #ff6f61;
+  transform: scale(1.05);
+}
+
+/* Todo Items Styling */
+.todo-item {
+  background-color: rgba(255, 200, 200, 0.9);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(255, 100, 100, 0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  flex-wrap: wrap; /* For wrapping on smaller screens */
+}
+
+.todo-item:hover {
+  transform: translateY(-5px); /* Subtle bounce effect */
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.2rem; /* Bigger font size for better readability */
+  margin-right: 10px;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #888; /* Greyed out color for completed tasks */
+}
+
+/* Button Styles */
+.todo-item button {
+  background-color: #ff8a65;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.todo-item button:hover {
+  background-color: #ff6f61;
+}
+
+.complete-btn {
+  background-color: #4caf50;
+}
+
+.complete-btn:hover {
+  background-color: #81c784;
+}
+
+.edit-btn {
+  background-color: #ffdd44;
+}
+
+.edit-btn:hover {
+  background-color: #ffcc00;
+}
+
+.remove-btn {
+  background-color: #ff4444;
+}
+
+.remove-btn:hover {
+  background-color: #ff7777;
+}
+
+/* Task Group Header */
+.task-group h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1024px) {
+  .add-todo-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-todo-form input,
+  .add-todo-form select,
+  .add-todo-form button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .todo-text {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem; /* Shrink the title for medium-sized screens */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Further shrink for smaller screens */
+  }
+
+  .task-group h2 {
+    font-size: 1.5rem;
+  }
+
+  .todo-item {
+    padding: 10px;
+  }
+
+  .todo-text {
+    font-size: 1rem;
+  }
+
+  .todo-item button {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Title should be smallest on mobile */
+  }
+
+  .todo-item {
+    padding: 8px;
+  }
+
+  .todo-text {
+    font-size: 0.9rem;
+  }
+
+  .todo-item button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
